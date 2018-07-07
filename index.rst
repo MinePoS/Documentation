@@ -18,7 +18,6 @@ Requirements
 Installation
 ===============
 #. Login to your server via SSH
-#. Run the following command
-:: curl -s https://gist.githubusercontent.com/AndrewAubury/8b8a44214d54150a4360366ddd0d8be5/raw/de3caaf86bfb5bbb6dcc513e9cd24d3f00147acc/install-minepos.sh | bash
+#. Run the following command :: curl -s https://gist.githubusercontent.com/AndrewAubury/8b8a44214d54150a4360366ddd0d8be5/raw/de3caaf86bfb5bbb6dcc513e9cd24d3f00147acc/install-minepos.sh | bash
 #. Follow the installer.
 #. Log in to MinePoS and change your password
