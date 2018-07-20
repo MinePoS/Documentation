@@ -1,0 +1,41 @@
+## How to install Minepos on Ubuntu using Apache2
+1. Installing the Depends
+
+   1. `apt -y install software-properties-common`
+   2. `add-apt-repository -y ppa:ondrej/php`
+   3. `apt update`
+   4. `apt -y install php7.2 php7.2-cli php7.2-gd php7.2-mysql php7.2-pdo php7.2-mbstring php7.2-tokenizer php7.2-bcmath php7.2-xml php7.2-fpm php7.2-curl php7.2-zip curl tar unzip git`
+2. Make a the directory for Minepos 
+   1. `mkdir -p /var/www/minepos/`
+3. Create the config for apache2
+   1. `nano /etc/apache2/sites-enabled/minepos.conf`
+   2.
+    ```text
+         <VirtualHost *:80>
+                 DocumentRoot "/var/www/minepos/public"
+                 ServerName <domain>           
+                 <Directory "/var/www/minepos/public">
+                      AllowOverride All
+                 </Directory>
+             </VirtualHost>
+      ```
+   3. Run ```systemctl restart apache2```
+4. [Optional] Setup HTTPS: Follow the instructions with let https://certbot.eff.org/lets-encrypt/ubuntuxenial-apache
+5. Installing Minepos
+   1. `cd /var/www/minepos/`
+   2. `wget https://github.com/MinePoS/Backend/archive/v0.0.6.zip`
+   3. Run THe following commands
+   ```text
+   unzip v0.0.6.zip
+   rm v0.0.6.zip
+   mv Backend-0.0.6/* .
+   rm -Rf Backend-0.0.6
+   cp example.env .env
+   chmod -R 755 storage/* bootstrap/cache public/*
+   curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+   composer install
+   php artisan key:generate --force
+   ```
+   4. Edit .env Filling the fields
+   5. `php artisan migrate --seed`
+   
