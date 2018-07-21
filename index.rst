@@ -26,17 +26,17 @@ Installation-Nginx
 
 .. _Installation-Apache2
 Installation-Apache2
-===================
+====================
 
 Preparing your OS
-==================
+------------------
    1. `apt -y install software-properties-common`
    2. `add-apt-repository -y ppa:ondrej/php`
    3. `apt update`
    4. :code:`apt -y install php7.2 php7.2-cli php7.2-gd php7.2-mysql php7.2-pdo php7.2-mbstring php7.2-tokenizer php7.2-bcmath php7.2-xml php7.2-fpm php7.2-curl php7.2-zip curl tar unzip git`
 
 Preparing Apache2
-==================
+------------------
    1. :code:`mkdir -p /var/www/minepos/`
    2. nano /etc/apache2/sites-enabled/minepos.conf
 
@@ -54,11 +54,11 @@ Preparing Apache2
 3. Run systemctl restart apache2
 
 Optional Setup with SSL certificate 
-====================================
+-------------------------------------
 Setup HTTPS: Follow the instructions with let https://certbot.eff.org/lets-encrypt/ubuntuxenial-apache
 
 Installing Minepos
-==================
+-------------------
    1.Run the following commands
 
 .. code-block:: text
