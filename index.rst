@@ -77,3 +77,4 @@ Installing Minepos
 
 2. Edit .env Filling the fields
 3. php artisan migrate --seed
+4. Log in to MinePoS and change your password
