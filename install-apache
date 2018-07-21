@@ -24,7 +24,7 @@
 5. Installing Minepos
    1. `cd /var/www/minepos/`
    2. `wget https://github.com/MinePoS/Backend/archive/v0.0.6.zip`
-   3. Run THe following commands
+   3. Run the following commands
    ```text
    unzip v0.0.6.zip
    rm v0.0.6.zip
