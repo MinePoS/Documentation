@@ -3,6 +3,7 @@ How to install Minepos on Ubuntu using Apache2
 
 Warning
 Please note MinePoS is currently in **ALPHA** we do **NOT** recommend installing it on a production server.
+
 .. _Introduction:
 
 Introduction
@@ -46,7 +47,8 @@ Requirements
         </Directory>
     </VirtualHost>
 
-   3. Run systemctl restart apache2
+
+3. Run systemctl restart apache2
 
 4. [Optional] Setup HTTPS: Follow the instructions with let https://certbot.eff.org/lets-encrypt/ubuntuxenial-apache
 5. Installing Minepos
@@ -69,5 +71,5 @@ Requirements
     composer install
     php artisan key:generate --force
 
-   4. Edit .env Filling the fields
-   5. php artisan migrate --seed
+4. Edit .env Filling the fields
+5. php artisan migrate --seed
