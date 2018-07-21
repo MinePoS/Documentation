@@ -4,13 +4,12 @@ How to install Minepos on Ubuntu using Apache2
 Warning
 Please note MinePoS is currently in **ALPHA** we do **NOT** recommend installing it on a production server.
 
-.. _Introduction:
 
 Introduction
 ===============
 MinePoS is a free alternative game donation store.
 
-.. _Requirements:
+
 Requirements
 ===============
 * Dedicated Server / VPS
@@ -18,24 +17,17 @@ Requirements
 * Sub-domain
 * MySQL Server & Database 
 
-
-1. Installing the Depends
-
-
+Preparing your OS
+==================
    1. `apt -y install software-properties-common`
    2. `add-apt-repository -y ppa:ondrej/php`
    3. `apt update`
    4. :code:`apt -y install php7.2 php7.2-cli php7.2-gd php7.2-mysql php7.2-pdo php7.2-mbstring php7.2-tokenizer php7.2-bcmath php7.2-xml php7.2-fpm php7.2-curl php7.2-zip curl tar unzip git`
 
-2. Make a the directory for Minepos 
-
+Preparing Apache2
+==================
    1. :code:`mkdir -p /var/www/minepos/`
-
-3. Create the config for apache2
-
-   1. nano /etc/apache2/sites-enabled/minepos.conf
-
-   2.    
+   2. nano /etc/apache2/sites-enabled/minepos.conf
 
 .. code-block:: text
 
@@ -50,17 +42,18 @@ Requirements
 
 3. Run systemctl restart apache2
 
-4. [Optional] Setup HTTPS: Follow the instructions with let https://certbot.eff.org/lets-encrypt/ubuntuxenial-apache
-5. Installing Minepos
+Optional Setup with SSL certificate 
+====================================
+Setup HTTPS: Follow the instructions with let https://certbot.eff.org/lets-encrypt/ubuntuxenial-apache
 
-   1. cd /var/www/minepos/
-
-   2. wget https://github.com/MinePoS/Backend/archive/v0.0.6.zip
-
-   3. Run the following commands
+Installing Minepos
+==================
+   1.Run the following commands
 
 .. code-block:: text
 
+    cd /var/www/minepos/
+    wget https://github.com/MinePoS/Backend/archive/v0.0.6.zip
     unzip v0.0.6.zip
     rm v0.0.6.zip
     mv Backend-0.0.6/* .
@@ -71,5 +64,5 @@ Requirements
     composer install
     php artisan key:generate --force
 
-4. Edit .env Filling the fields
-5. php artisan migrate --seed
+2. Edit .env Filling the fields
+3. php artisan migrate --seed
